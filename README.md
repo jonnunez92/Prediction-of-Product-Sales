@@ -1,7 +1,5 @@
 # Prediction-of-Product-Sales
 
-Sales prediction for food items sold at various stores.
+With these graphs and models, we can predict future product sales for our clients.
 
-## Colab Link:
 
-https://colab.research.google.com/drive/1Hi8N3hyOm04nsCIAgVqenWfciZUX2WTN
