@@ -32,3 +32,6 @@ The Decision Tree is the better model to use when predicting Item Sales.
 From the Metrics Score, we can see that the Mean Absolute Error for the Decision Tree is lower by about 70 rupees. The Root Mean Squared Error is also lower for the Decision Tree, meaning that there are less outliers throwing off the weight of our model.
 
 Looking at the Percentage of Error, we can also see that the Linear Regression model will be off, on average, by 36.87% while the Decision Tree will be off by 33.85%. We'll have less error with the Decision Tree.
+
+## Contact for Furthur Information
+My email: jon.nunez92@gmail.com
