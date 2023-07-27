@@ -103,7 +103,7 @@ Looking at the Percentage of Error, we can also see that the Linear Regression m
     - 'Outlet_Identifier_OUT027' is ranked higher (3rd instead of 5th)
 
  ## Summary Dot Plot RandomForestRegressor
- ![summary_plot_dot_rf_reg](https://github.com/jonnunez92/Prediction-of-Product-Sales/blob/main/Data/summary_plot_dot_rf_reg.png)
+ ![summary_plot_dot_rf_reg](https://github.com/jonnunez92/Prediction-of-Product-Sales/blob/main/Data/summary_plot_dot_rf_reg.png?raw=true)
 
  ### Summary Dot Plot Interpretation
 
