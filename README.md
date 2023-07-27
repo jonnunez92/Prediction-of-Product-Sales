@@ -79,3 +79,45 @@ Looking at the Percentage of Error, we can also see that the Linear Regression m
     - 'Outlet_Identifier_OUT027'    
 
 - Same features as Default Importance, but, in this case, the features are valued higher in importance compared to the Default
+
+***
+# Project 1 - Revisited Part 2: Explaining Models with SHAP
+
+## Summary Bar Plot RandomForestRegressor
+![summary_bar_plot_rf_reg](https://github.com/jonnunez92/Prediction-of-Product-Sales/blob/main/Data/summary_plot_bar_rf_reg.png?raw=true)
+
+### Comparison with RandomForest Regressor Feature Importance
+
+#### Default Feature Importances
+![rf_default_importances](https://github.com/jonnunez92/Prediction-of-Product-Sales/blob/main/Data/rf_default_importances.png)
+
+#### Permutation Feature Importances
+![rf_perm_importances](https://github.com/jonnunez92/Prediction-of-Product-Sales/blob/main/Data/rf_perm_importances.png)
+
+#### Differences
+- Default and Permutation Importances have the same top 5 features
+
+- SHAP Plot Summary differs in that:
+    - 'Item_Visibility' is ranked lower (5th instead of 3rd)
+    - 'Outlet_Type_Supermarket Type 3' takes the place of 'Item_Weight' (ranked 4th)
+    - 'Outlet_Identifier_OUT027' is ranked higher (3rd instead of 5th)
+
+ ## Summary Dot Plot RandomForestRegressor
+ ![summary_plot_dot_rf_reg](https://github.com/jonnunez92/Prediction-of-Product-Sales/blob/main/Data/summary_plot_dot_rf_reg.png)
+
+ ### Summary Dot Plot Interpretation
+
+**Interpret Top 3 Features**
+
+- 'Item_MRP':
+    - As the value of the item's MRP increases (gets redder), the target value ('Item_Outlet_Sales') increases as well (moves right)
+
+
+- 'Outlet_Type_Grocery_Store' (true/false):
+    - Being a Grocery Store (red/true) will decrease (move left) the target value ('Item_Outlet_Sales')
+    - Not being a Grocery Store (blue/false) will increase (move right) the target value ('Item_Outlet_Sales')
+    
+    
+- 'Outlet_Identifier_OUT027' (true/false):
+    - Being Outlet OUT027 (red/true) will increase (move right) the target value ('Item_Outlet_Sales')
+    - Not being a Outlet OUT027 (blue/false) will only marginally affect (keep center at 0 or slightly move left) the target value ('Item_Outlet_Sales')
