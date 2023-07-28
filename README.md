@@ -121,3 +121,60 @@ Looking at the Percentage of Error, we can also see that the Linear Regression m
 - 'Outlet_Identifier_OUT027' (true/false):
     - Being Outlet OUT027 (red/true) will increase (move right) the target value ('Item_Outlet_Sales')
     - Not being a Outlet OUT027 (blue/false) will only marginally affect (keep center at 0 or slightly move left) the target value ('Item_Outlet_Sales')
+
+***
+# Local Explanations
+- Selected to compare 'High' and 'Low' sale stores to bring into stark relief the main differences between a store that performs well and a store that doesn't
+
+## SHAP Local Force Plot
+
+### High Sales
+![force_plot_high_sales](https://github.com/jonnunez92/Prediction-of-Product-Sales/blob/main/Data/force_plot_high_sales.png)
+- Significant 'push' towards the right indicating higher sales
+    - Major features:
+        - 'Item_MRP'
+        - 'Item_Visibility'
+        - 'Item_Weight'
+        
+- Only one feature pushing left (lower sales):
+    - 'Outlet_Type_Supermarket Type3'
+ 
+### Low Sales
+![force_plot_low_sales](https://github.com/jonnunez92/Prediction-of-Product-Sales/blob/main/Data/force_plot_low_sales.png)
+- Significant 'push' to the left (lower) indicating lower sales
+    - Major features:
+        - 'Outlet_Type_Grocery Store'
+        - 'Item_MRP'        
+        
+- Seems to be no features pushing right (higher sales)
+
+## Lime Tabular Explanation
+
+### High Sales
+![lime_high_sales](https://github.com/jonnunez92/Prediction-of-Product-Sales/blob/main/Data/lime_high_sales.png?raw=true)
+- Predicted Value is 6693.23 where True Value is 8323.8316
+
+- Interpreting our Features with the 'negative' and 'positive' bar chart
+    - Positive (higher sales) include:
+        - 'Outlet_Type_Grocery Store' (not a Grocery Store)
+        - 'Item_MRP' (greater than 180.25 at 219.35)
+    - Negative (lower sales) include:
+        - 'Outlet_Identifier_OUT027' (not this Outlet)
+        - 'Outlet_Type_Supermarket Type3' (not this Outlet Type)
+    - Even though the Feature Names are cutoff, they can be seen in the bottom graph (Feature/Value)
+ 
+### Low Sales
+![lime_low_sales](https://github.com/jonnunez92/Prediction-of-Product-Sales/blob/main/Data/lime_low_sales.png)
+- Predicted Value is 63.42 where True Value is 36.62
+
+- Interpreting our Features with the 'negative' and 'positive' bar chart
+    - Negative (lower sales) include:
+        - 'Outlet_Type_Grocery Store' (is a Grocery Store)
+        - 'Item_MRP' (less than or equal to 90.72 at 35.22)
+        - 'Outlet_Identifier_OUT027' (is not this Outlet)
+        - 'Outlet_Type_Supermarket Type3' (is not this Outlet Type)
+    - Positive (higher sales) include:
+        - 'Item_Type_Seafood' (is not this Item Type)
+        - 'Outlet_Identifier_OUT045' (is not this Outlet)
+    
+    - Even though the Feature Names are cutoff, they can be seen in the bottom graph (Feature/Value)
